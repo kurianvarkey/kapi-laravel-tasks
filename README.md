@@ -39,7 +39,7 @@ The code related to this sample project is in the kapi folder.
 ## Postman collection
 There is a postman collection available in the postman directory to test from postman
 
-### Run the database seeding first if need run from postman
+### Run the database seeding first if requesting from postman
 ```
 docker-compose exec app php artisan db:seed
 ```
