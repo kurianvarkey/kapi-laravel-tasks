@@ -32,6 +32,10 @@ http://localhost:8000/1.0/users
 http://localhost:8000/1.0/tasks
 
 
+### Application code
+The code related to this sample project is in the kapi folder.
+
+
 ## Postman collection
 There is a postman collection available in the postman directory to test from postman
 
