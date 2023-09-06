@@ -26,7 +26,9 @@ docker-compose exec app php artisan test --coverage
 
 ### Application url
 http://localhost:8000/1.0
+
 http://localhost:8000/1.0/users
+
 http://localhost:8000/1.0/tasks
 
 
