@@ -1,0 +1,68 @@
+version: '1.0'
+services:  
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kapi-app
+    container_name: kapi-app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    depends_on:
+      - maria-db
+    volumes:
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - kapi-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: kapi-webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - kapi-network
+
+  #Mariadb Service
+  maria-db:
+    image: "mariadb:10"
+    container_name: kapi-mariadb
+    restart: always
+    tty: true
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_DATABASE: kapi-tasks
+      MYSQL_ROOT_PASSWORD: dev@2022!
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: kapiuser
+      MYSQL_PASSWORD: dev@2022!
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mariadb
+    volumes:
+        - dbdata:/var/lib/mysql/
+        - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+        - kapi-network
+
+#Docker Networks
+networks:
+  kapi-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local

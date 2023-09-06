@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "d5143e4f-402d-4ce0-8aa4-74c19e5811dc",
+		"name": "Kapi - Tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14370604"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Store user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "kk2@kk.com",
+									"type": "text"
+								},
+								{
+									"key": "job_title_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "job_title",
+									"value": "developer",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "Kurian",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Paulose",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2000-04-20",
+									"type": "text"
+								},
+								{
+									"key": "landline",
+									"value": "222222",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "08788454111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{end_point}}/users",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/users/1",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "kk@kk.com",
+									"type": "text"
+								},
+								{
+									"key": "job_title_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Kurian1",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Paulose",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2000-04-21",
+									"type": "text"
+								},
+								{
+									"key": "landline",
+									"value": "222222",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "08080807",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{end_point}}/users/1",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/users/1",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/users",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "77a36217-6f94-4211-9f85-fcf167f6044c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test task",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Task description",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-01-01 10:00",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-01-01 10:30",
+									"type": "text"
+								},
+								{
+									"key": "is_completed",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{end_point}}/tasks",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "77a36217-6f94-4211-9f85-fcf167f6044c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/tasks/2",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"tasks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "77a36217-6f94-4211-9f85-fcf167f6044c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test task new",
+									"type": "text"
+								},
+								{
+									"key": "is_completed",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{end_point}}/tasks/1",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "77a36217-6f94-4211-9f85-fcf167f6044c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/tasks/1",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "77a36217-6f94-4211-9f85-fcf167f6044c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{end_point}}/tasks",
+							"host": [
+								"{{end_point}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{end_point}}",
+					"host": [
+						"{{end_point}}"
+					]
+				},
+				"description": "Default"
+			},
+			"response": []
+		}
+	]
+}
